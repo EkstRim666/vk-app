@@ -13,6 +13,8 @@
 		419EB7382132DFD50015BF14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 419EB7372132DFD50015BF14 /* Assets.xcassets */; };
 		419EB73B2132DFD50015BF14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419EB7392132DFD50015BF14 /* LaunchScreen.storyboard */; };
 		419EB7442132ECBA0015BF14 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB7432132ECBA0015BF14 /* Service.swift */; };
+		419EB765213444EB0015BF14 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB764213444EB0015BF14 /* FriendTableViewCell.swift */; };
+		419EB767213445A40015BF14 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB766213445A40015BF14 /* FriendsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		419EB73A2132DFD50015BF14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		419EB73C2132DFD50015BF14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		419EB7432132ECBA0015BF14 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		419EB764213444EB0015BF14 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		419EB766213445A40015BF14 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		419EB72F2132DFD40015BF14 /* vk-app */ = {
 			isa = PBXGroup;
 			children = (
+				419EB763213444D40015BF14 /* Friends */,
 				419EB7422132E8180015BF14 /* Services */,
 				419EB7302132DFD40015BF14 /* AppDelegate.swift */,
 				419EB7322132DFD40015BF14 /* AuthorizationViewController.swift */,
@@ -73,6 +78,15 @@
 				419EB7432132ECBA0015BF14 /* Service.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		419EB763213444D40015BF14 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				419EB764213444EB0015BF14 /* FriendTableViewCell.swift */,
+				419EB766213445A40015BF14 /* FriendsTableViewController.swift */,
+			);
+			name = Friends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +163,8 @@
 				419EB7332132DFD40015BF14 /* AuthorizationViewController.swift in Sources */,
 				419EB7312132DFD40015BF14 /* AppDelegate.swift in Sources */,
 				419EB7442132ECBA0015BF14 /* Service.swift in Sources */,
+				419EB765213444EB0015BF14 /* FriendTableViewCell.swift in Sources */,
+				419EB767213445A40015BF14 /* FriendsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
