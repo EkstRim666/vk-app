@@ -14,10 +14,19 @@ class Service {
     private static let client_id: String = "6612791"
     
     private static var token: String = ""
+    private static var userId: String = ""
     
     //MARK: - Token
     static func setToken(token: String) {
         Service.token = token
+    }
+    
+    static func setUserId(userId: String) {
+        Service.userId = userId
+    }
+    
+    static func getUserId() -> String {
+        return Service.userId
     }
     
     //MARK: - Authorisation VK
@@ -36,5 +45,31 @@ class Service {
         ]
         
         return URLRequest(url: urlComponents.url!)
+    }
+    
+    //MARK: - Request to API VK
+    static func getFriends(userId: String) {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        var urlConstructor = URLComponents()
+        
+        urlConstructor.scheme = "https"
+        urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/friends.get"
+        urlConstructor.queryItems = [
+            URLQueryItem(name: "user_id", value: userId),
+            URLQueryItem(name: "order", value: "hints"),
+            URLQueryItem(name: "fields", value: "first_name, last_name, photo_50, photo_100, photo_200_orig"),
+            URLQueryItem(name: "access_token", value: Service.token),
+            URLQueryItem(name: "v", value: Service.versionAPI),
+        ]
+        
+        let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
+            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+            
+            print(json as Any)
+        }
+        
+        task.resume()
     }
 }

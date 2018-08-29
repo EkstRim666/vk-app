@@ -14,6 +14,8 @@ class FriendsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.rowHeight = 55
+        
+        Service.getFriends(userId: Service.getUserId())
     }
 
     // MARK: - Table view data source
