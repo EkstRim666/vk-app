@@ -14,6 +14,8 @@ class GroupsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.rowHeight = 55
+        
+        Service.getGroups(userId: Service.getUserId())
     }
 
     // MARK: - Table view data source

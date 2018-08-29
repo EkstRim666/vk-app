@@ -43,8 +43,9 @@ extension AuthorisationViewController: WKNavigationDelegate {
                 return dict
         }
         
-        if let token = params["access_token"] {
+        if let token = params["access_token"], let userId = params["user_id"] {
             Service.setToken(token: token)
+            Service.setUserId(userId: userId)
         }
         
         performSegue(withIdentifier: "segueToApp", sender: nil)
