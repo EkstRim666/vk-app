@@ -65,9 +65,14 @@ class Service {
         ]
         
         let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
-            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-            
-            print(json as Any)
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let responseUserFromApi = try decoder.decode(ResponseUsersFromApi.self, from: data)
+            }
+            catch let error {
+                print(error)
+            }
         }
         
         task.resume()
