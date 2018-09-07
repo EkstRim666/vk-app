@@ -15,6 +15,7 @@
 		419EB7442132ECBA0015BF14 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB7432132ECBA0015BF14 /* Service.swift */; };
 		419EB76A213448910015BF14 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB769213448910015BF14 /* GroupsTableViewController.swift */; };
 		419EB76C213449280015BF14 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB76B213449280015BF14 /* GroupTableViewCell.swift */; };
+		41ED34882140A3EE00A38490 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34872140A3EE00A38490 /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		419EB7432132ECBA0015BF14 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		419EB769213448910015BF14 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		419EB76B213449280015BF14 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		41ED34872140A3EE00A38490 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		419EB72F2132DFD40015BF14 /* vk-app */ = {
 			isa = PBXGroup;
 			children = (
+				41ED34862140A3CC00A38490 /* Model */,
 				419EB768213447EC0015BF14 /* Groups */,
 				419EB7422132E8180015BF14 /* Services */,
 				419EB7302132DFD40015BF14 /* AppDelegate.swift */,
@@ -87,6 +90,14 @@
 				419EB76B213449280015BF14 /* GroupTableViewCell.swift */,
 			);
 			name = Groups;
+			sourceTree = "<group>";
+		};
+		41ED34862140A3CC00A38490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41ED34872140A3EE00A38490 /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 				419EB76C213449280015BF14 /* GroupTableViewCell.swift in Sources */,
 				419EB7332132DFD40015BF14 /* AuthorizationViewController.swift in Sources */,
 				419EB7312132DFD40015BF14 /* AppDelegate.swift in Sources */,
+				41ED34882140A3EE00A38490 /* Group.swift in Sources */,
 				419EB7442132ECBA0015BF14 /* Service.swift in Sources */,
 				419EB76A213448910015BF14 /* GroupsTableViewController.swift in Sources */,
 			);
