@@ -77,4 +77,33 @@ class Service {
         
         task.resume()
     }
+    
+    static func getMessage(userId: Int) {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        var urlConstructor = URLComponents()
+        
+        urlConstructor.scheme = "https"
+        urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/messages.getHistory"
+        urlConstructor.queryItems = [
+            URLQueryItem(name: "count", value: "200"),
+            URLQueryItem(name: "user_id", value: String(userId)),
+            URLQueryItem(name: "access_token", value: Service.token),
+            URLQueryItem(name: "v", value: Service.versionAPI),
+        ]
+        
+        let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                
+            }
+            catch let error {
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
 }

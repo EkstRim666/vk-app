@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="1536.8" y="-545.32019704433503"/>
         </scene>
-        <!--View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="gaf-01-1Ji">
             <objects>
-                <viewController id="bjy-5C-Afg" sceneMemberID="viewController">
+                <viewController id="bjy-5C-Afg" customClass="MessageViewController" customModule="vk_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4uV-t7-NiO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,7 +96,7 @@
                                 <rect key="frame" x="0.0" y="144" width="375" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kh8-Dw-xxL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="kh8-Dw-xxL" customClass="MessageTableViewCell" customModule="vk_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kh8-Dw-xxL" id="Xdi-1d-CcE">
@@ -112,6 +112,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageText" destination="e0e-6W-ALy" id="8eI-aK-fJd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -128,6 +131,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t39-sk-WJ6"/>
                     </view>
+                    <connections>
+                        <outlet property="avatar" destination="Y67-dJ-s8h" id="prQ-Sf-Eai"/>
+                        <outlet property="friendName" destination="QII-pE-WPV" id="WeB-kC-oQF"/>
+                        <outlet property="tableView" destination="4d7-He-iVK" id="22h-TW-BFY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grx-h9-dXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

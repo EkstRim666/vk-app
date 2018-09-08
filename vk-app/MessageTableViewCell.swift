@@ -25,10 +25,10 @@ class MessageTableViewCell: UITableViewCell {
         return MessageTableViewCell.height
     }
     
-    func setMessage(message: Message) {
-        self.message = message
-        setMessageText()
-    }
+//    static func setMessage(message: Message) {
+//        self.message = message
+//        setMessageText()
+//    }
     
     private func setMessageText() {
         messageText.text = message?.text
