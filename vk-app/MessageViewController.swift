@@ -19,7 +19,7 @@ class MessageViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+
     }
 }
 

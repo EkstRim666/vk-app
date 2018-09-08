@@ -97,7 +97,7 @@ class Service {
             guard let data = data else { return }
             do {
                 let decoder = JSONDecoder()
-                
+                let responseMessagesFromApi = try decoder.decode(ResponseMessagesFromApi.self, from: data)
             }
             catch let error {
                 print(error)
