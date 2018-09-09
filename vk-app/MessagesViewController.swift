@@ -1,5 +1,5 @@
 //
-//  MessageViewController.swift
+//  MessagesViewController.swift
 //  vk-app
 //
 //  Created by Andrey Yusupov on 08/09/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageViewController: UIViewController {
+class MessagesViewController: UIViewController {
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var friendName: UILabel!
@@ -23,14 +23,14 @@ class MessageViewController: UIViewController {
     }
 }
 
-extension MessageViewController: UITableViewDelegate {
+extension MessagesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return MessageTableViewCell.getHeight()
     }
 }
 
-extension MessageViewController: UITableViewDataSource {
+extension MessagesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
