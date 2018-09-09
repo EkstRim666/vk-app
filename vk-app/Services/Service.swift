@@ -106,4 +106,27 @@ class Service {
         
         task.resume()
     }
+    
+    static func getPhotos(userId: Int) {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        var urlConstructor = URLComponents()
+        
+        urlConstructor.scheme = "https"
+        urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/photos.getAll"
+        urlConstructor.queryItems = [
+            URLQueryItem(name: "count", value: "200"),
+            URLQueryItem(name: "owner_id", value: String(userId)),
+            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "access_token", value: Service.token),
+            URLQueryItem(name: "v", value: Service.versionAPI),
+        ]
+        
+        let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
+            
+        }
+        
+        task.resume()
+    }
 }
