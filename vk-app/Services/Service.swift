@@ -124,7 +124,14 @@ class Service {
         ]
         
         let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
-            
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let responsePhotosFromApi = try decoder.decode(ResponsePhotosFromApi.self, from: data)
+            }
+            catch let error {
+                print(error)
+            }
         }
         
         task.resume()

@@ -22,6 +22,7 @@
 		41ED34D321438B2600A38490 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34D221438B2600A38490 /* Message.swift */; };
 		41ED34DC2144FCD000A38490 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34DB2144FCD000A38490 /* PhotosCollectionViewController.swift */; };
 		41ED34DF2144FD0700A38490 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34DE2144FD0700A38490 /* PhotoCollectionViewCell.swift */; };
+		41ED34E12145084800A38490 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34E02145084800A38490 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		41ED34D221438B2600A38490 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		41ED34DB2144FCD000A38490 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		41ED34DE2144FD0700A38490 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		41ED34E02145084800A38490 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				41ED345E213CAF7F00A38490 /* User.swift */,
 				41ED34D221438B2600A38490 /* Message.swift */,
+				41ED34E02145084800A38490 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41ED34E12145084800A38490 /* Photo.swift in Sources */,
 				41ED34CD214388F400A38490 /* MessageTableViewCell.swift in Sources */,
 				419EB7332132DFD40015BF14 /* AuthorizationViewController.swift in Sources */,
 				41ED34D12143894700A38490 /* MessagesViewController.swift in Sources */,
