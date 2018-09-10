@@ -54,10 +54,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="lIy-7r-bWp" kind="relationship" relationship="viewControllers" id="rPm-Xg-wgq"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kk-AS-r0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-178" y="-33"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="boN-st-YuF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="News" id="lIy-7r-bWp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="4Jh-JL-8ow"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H29-jg-nIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="316"/>
         </scene>
     </scenes>
 </document>
