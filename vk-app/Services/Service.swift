@@ -37,4 +37,27 @@ class Service {
         
         return URLRequest(url: urlComponents.url!)
     }
+    
+    //MARK: - Request to API VK
+    static func getFriends(userId: String) {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        var urlConstructor = URLComponents()
+        
+        urlConstructor.scheme = "https"
+        urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/newsfeed.get"
+        urlConstructor.queryItems = [
+            URLQueryItem(name: "filters", value: "post"),
+            URLQueryItem(name: "count", value: "100"),
+            URLQueryItem(name: "access_token", value: Service.token),
+            URLQueryItem(name: "v", value: Service.versionAPI),
+        ]
+        
+        let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
+            guard let data = data else { return }
+        }
+        
+        task.resume()
+    }
 }
