@@ -96,10 +96,10 @@
                                 <connections>
                                     <outlet property="author" destination="PFd-ke-wxa" id="pyb-X3-85e"/>
                                     <outlet property="avatar" destination="FTI-ka-CsF" id="YuV-N6-uGp"/>
-                                    <outlet property="countOfComint" destination="TjA-j5-hzI" id="H06-sT-1UD"/>
+                                    <outlet property="countOfComment" destination="TjA-j5-hzI" id="2Jf-jO-p3y"/>
                                     <outlet property="countOfLike" destination="zmk-kP-NAb" id="2Xz-RS-yae"/>
-                                    <outlet property="countOfLook" destination="h1A-q6-atX" id="8Kn-8V-NdK"/>
                                     <outlet property="countOfRepost" destination="weX-TB-eS2" id="BSZ-UH-mIF"/>
+                                    <outlet property="countOfView" destination="h1A-q6-atX" id="Njk-ey-axe"/>
                                     <outlet property="textOfNews" destination="7cZ-Dw-CGz" id="byo-BK-QPx"/>
                                 </connections>
                             </tableViewCell>

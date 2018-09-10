@@ -9,6 +9,12 @@
 import UIKit
 
 class NewsTableViewController: UITableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Service.getNews()
+    }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -39,7 +39,7 @@ class Service {
     }
     
     //MARK: - Request to API VK
-    static func getFriends(userId: String) {
+    static func getNews() {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         var urlConstructor = URLComponents()
@@ -56,6 +56,13 @@ class Service {
         
         let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
             guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let responseNewsFromApi = try decoder.decode(ResponseNewsFromApi.self, from: data)
+            }
+            catch let error {
+                print(error)
+            }
         }
         
         task.resume()

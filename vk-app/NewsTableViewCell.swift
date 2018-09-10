@@ -12,8 +12,8 @@ class NewsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var countOfComint: UILabel!
-    @IBOutlet weak var countOfLook: UILabel!
+    @IBOutlet weak var countOfComment: UILabel!
+    @IBOutlet weak var countOfView: UILabel!
     @IBOutlet weak var countOfLike: UILabel!
     @IBOutlet weak var countOfRepost: UILabel!
     @IBOutlet weak var textOfNews: UILabel!
@@ -21,10 +21,10 @@ class NewsTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         avatar.image = nil
         author.text = nil
-        countOfComint.text = nil
+        countOfComment.text = nil
         countOfLike.text = nil
         countOfRepost.text = nil
-        countOfLook.text = nil
+        countOfView.text = nil
         textOfNews.text = nil
     }
 }
