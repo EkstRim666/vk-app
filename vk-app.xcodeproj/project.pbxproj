@@ -45,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		417BDEFB2147AB45004D06FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41ED34F22146A95E00A38490 /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		419EB7242132DFD40015BF14 = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +72,7 @@
 		419EB72F2132DFD40015BF14 /* vk-app */ = {
 			isa = PBXGroup;
 			children = (
-				41ED34F12146A94A00A38490 /* Model */,
+				417BDEFB2147AB45004D06FB /* Model */,
 				41ED34EB2146967800A38490 /* Storyboard */,
 				41ED34E6214695D300A38490 /* News */,
 				419EB7422132E8180015BF14 /* Services */,
@@ -101,14 +109,6 @@
 				41ED34EC214696B100A38490 /* News.storyboard */,
 			);
 			name = Storyboard;
-			sourceTree = "<group>";
-		};
-		41ED34F12146A94A00A38490 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				41ED34F22146A95E00A38490 /* News.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
