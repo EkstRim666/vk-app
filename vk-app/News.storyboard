@@ -115,10 +115,12 @@
             </objects>
             <point key="canvasLocation" x="-261.60000000000002" y="199.25037481259372"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--News-->
         <scene sceneID="9WO-7J-ObB">
             <objects>
                 <navigationController id="SgO-m2-P90" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" id="rR6-Gn-7jb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n8Z-eU-I6e">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
