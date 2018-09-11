@@ -23,6 +23,10 @@
         41ED34DC2144FCD000A38490 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34DB2144FCD000A38490 /* PhotosCollectionViewController.swift */; };
         41ED34DF2144FD0700A38490 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34DE2144FD0700A38490 /* PhotoCollectionViewCell.swift */; };
         41ED34E12145084800A38490 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34E02145084800A38490 /* Photo.swift */; };
+        419EB76A213448910015BF14 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB769213448910015BF14 /* GroupsTableViewController.swift */; };
+        419EB76C213449280015BF14 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB76B213449280015BF14 /* GroupTableViewCell.swift */; };
+        41ED34882140A3EE00A38490 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34872140A3EE00A38490 /* Group.swift */; };
+        41ED34C22142B61300A38490 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41ED34C12142B61300A38490 /* Groups.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
         41ED34DB2144FCD000A38490 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
         41ED34DE2144FD0700A38490 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
         41ED34E02145084800A38490 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+        419EB769213448910015BF14 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+        419EB76B213449280015BF14 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+        41ED34872140A3EE00A38490 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+        41ED34C12142B61300A38490 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
                 41ED34C82142B77800A38490 /* Storyboard */,
                 41ED345D213CAF5A00A38490 /* Model */,
                 419EB763213444D40015BF14 /* Friends */,
+                419EB768213447EC0015BF14 /* Groups */,
                 419EB7422132E8180015BF14 /* Services */,
                 419EB7302132DFD40015BF14 /* AppDelegate.swift */,
                 419EB7322132DFD40015BF14 /* AuthorizationViewController.swift */,
@@ -99,6 +108,15 @@
             path = Services;
             sourceTree = "<group>";
         };
+        419EB768213447EC0015BF14 /* Groups */ = {
+            isa = PBXGroup;
+            children = (
+                419EB769213448910015BF14 /* GroupsTableViewController.swift */,
+                419EB76B213449280015BF14 /* GroupTableViewCell.swift */,
+            );
+            name = Groups;
+            sourceTree = "<group>";
+        };
         419EB763213444D40015BF14 /* Friends */ = {
             isa = PBXGroup;
             children = (
@@ -114,6 +132,7 @@
                 41ED345E213CAF7F00A38490 /* User.swift */,
                 41ED34D221438B2600A38490 /* Message.swift */,
                 41ED34E02145084800A38490 /* Photo.swift */,
+                41ED34872140A3EE00A38490 /* Group.swift */,
             );
             path = Model;
             sourceTree = "<group>";
@@ -123,6 +142,7 @@
             children = (
                 419EB7342132DFD40015BF14 /* Main.storyboard */,
                 41ED34C92142B79600A38490 /* Friends.storyboard */,
+                41ED34C12142B61300A38490 /* Groups.storyboard */,
             );
             name = Storyboard;
             sourceTree = "<group>";
@@ -204,6 +224,7 @@
             buildActionMask = 2147483647;
             files = (
                 41ED34CA2142B79600A38490 /* Friends.storyboard in Resources */,
+                41ED34C22142B61300A38490 /* Groups.storyboard in Resources */,
                 419EB73B2132DFD50015BF14 /* LaunchScreen.storyboard in Resources */,
                 419EB7382132DFD50015BF14 /* Assets.xcassets in Resources */,
                 419EB7362132DFD40015BF14 /* Main.storyboard in Resources */,
@@ -224,6 +245,9 @@
                 41ED34DC2144FCD000A38490 /* PhotosCollectionViewController.swift in Sources */,
                 41ED34D321438B2600A38490 /* Message.swift in Sources */,
                 419EB7312132DFD40015BF14 /* AppDelegate.swift in Sources */,
+                419EB76C213449280015BF14 /* GroupTableViewCell.swift in Sources */,
+                419EB76A213448910015BF14 /* GroupsTableViewController.swift in Sources */,
+                41ED34882140A3EE00A38490 /* Group.swift in Sources */,
                 41ED345F213CAF7F00A38490 /* User.swift in Sources */,
                 419EB7442132ECBA0015BF14 /* Service.swift in Sources */,
                 419EB765213444EB0015BF14 /* FriendTableViewCell.swift in Sources */,
