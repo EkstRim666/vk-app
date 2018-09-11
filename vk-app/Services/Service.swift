@@ -14,7 +14,7 @@ class Service {
     private static let client_id: String = "6612791"
     
     private static var token: String = ""
-    private static var userId: String = ""
+    private static var userId: Int = 0
     
     //MARK: - Token
     static func setToken(token: String) {
@@ -22,10 +22,11 @@ class Service {
     }
     
     static func setUserId(userId: String) {
+        guard let userId = Int(userId) else { return }
         Service.userId = userId
     }
     
-    static func getUserId() -> String {
+    static func getUserId() -> Int {
         return Service.userId
     }
     
@@ -48,7 +49,7 @@ class Service {
     }
     
     //MARK: - Request to API VK
-    static func getFriends(userId: String) {
+    static func getFriends(userId: Int) {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         var urlConstructor = URLComponents()
@@ -57,7 +58,7 @@ class Service {
         urlConstructor.host = "api.vk.com"
         urlConstructor.path = "/method/friends.get"
         urlConstructor.queryItems = [
-            URLQueryItem(name: "user_id", value: userId),
+            URLQueryItem(name: "user_id", value: String(userId)),
             URLQueryItem(name: "order", value: "hints"),
             URLQueryItem(name: "fields", value: "first_name, last_name, photo_50, photo_100, photo_200_orig"),
             URLQueryItem(name: "access_token", value: Service.token),
@@ -137,7 +138,7 @@ class Service {
         task.resume()
     }
     
-    static func getGroups(userId: String) {
+    static func getGroups(userId: Int) {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         var urlConstructor = URLComponents()
@@ -146,7 +147,7 @@ class Service {
         urlConstructor.host = "api.vk.com"
         urlConstructor.path = "/method/groups.get"
         urlConstructor.queryItems = [
-            URLQueryItem(name: "user_id", value: userId),
+            URLQueryItem(name: "user_id", value: String(userId)),
             URLQueryItem(name: "extended", value: "1"),
             URLQueryItem(name: "access_token", value: Service.token),
             URLQueryItem(name: "v", value: Service.versionAPI),
