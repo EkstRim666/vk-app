@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4125A620214870A80081781C /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125A61F214870A80081781C /* DataWorker.swift */; };
 		419EB7312132DFD40015BF14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB7302132DFD40015BF14 /* AppDelegate.swift */; };
 		419EB7332132DFD40015BF14 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB7322132DFD40015BF14 /* AuthorizationViewController.swift */; };
 		419EB7362132DFD40015BF14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419EB7342132DFD40015BF14 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		3EC3335C61C6D12342B76825 /* Pods-vk-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vk-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-vk-app/Pods-vk-app.release.xcconfig"; sourceTree = "<group>"; };
+		4125A61F214870A80081781C /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
 		419EB72D2132DFD40015BF14 /* vk-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vk-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		419EB7302132DFD40015BF14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		419EB7322132DFD40015BF14 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				419EB7432132ECBA0015BF14 /* Service.swift */,
+				4125A61F214870A80081781C /* DataWorker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				41ED34F32146A95E00A38490 /* News.swift in Sources */,
 				41ED34E82146962400A38490 /* NewsTableViewController.swift in Sources */,
 				41ED34EA2146966000A38490 /* NewsTableViewCell.swift in Sources */,
+				4125A620214870A80081781C /* DataWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

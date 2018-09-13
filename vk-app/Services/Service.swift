@@ -70,6 +70,7 @@ class Service {
             do {
                 let decoder = JSONDecoder()
                 let responseUserFromApi = try decoder.decode(ResponseUsersFromApi.self, from: data)
+                DataWorker.saveUserData(responseUserFromApi.response.items)
             }
             catch let error {
                 print(error)
