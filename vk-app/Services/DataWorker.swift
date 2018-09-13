@@ -24,4 +24,17 @@ class DataWorker {
             assertionFailure()
         }
     }
+    
+    //MARK: - Load data
+    static func loadUserData() -> Results<User>? {
+        do {
+            let realm = try Realm()
+            return realm.objects(User.self).filter("whose == %@", Service.getUserId())
+        }
+        catch  {
+            print(error)
+            assertionFailure()
+            return nil
+        }
+    }
 }
