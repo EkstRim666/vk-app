@@ -22,7 +22,7 @@ class User: Object, Codable {
     @objc dynamic var userId: Int = 0
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String = ""
-    @objc dynamic var avatarImage: URL = URL(string: "https://vk.com/images/deactivated_100.png")!
+    @objc dynamic var avatarImage: String = ""
     @objc dynamic var online: Int = 0
     @objc dynamic var whose: Int = 0
     
@@ -46,7 +46,7 @@ class User: Object, Codable {
         self.userId = try container.decode(Int.self, forKey: .userId)
         self.firstName = try container.decode(String.self, forKey: .firstName)
         self.lastName = try container.decode(String.self, forKey: .lastName)
-        self.avatarImage = try container.decode(URL.self, forKey: .avatarImage)
+        self.avatarImage = try container.decode(String.self, forKey: .avatarImage)
         self.online = try container.decode(Int.self, forKey: .online)
         self.whose = Service.getUserId()
     }
