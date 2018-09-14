@@ -196,4 +196,26 @@ class Service {
         
         task.resume()
     }
+    
+    static func deleteUser(userId: Int) {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        var urlConstructor = URLComponents()
+        
+        urlConstructor.scheme = "https"
+        urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/friends.delete"
+        urlConstructor.queryItems = [
+            URLQueryItem(name: "user_id", value: String(userId)),
+            URLQueryItem(name: "access_token", value: Service.token),
+            URLQueryItem(name: "v", value: Service.versionAPI),
+        ]
+        
+        let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
+            guard let data = data
+                else { return }
+        }
+        
+        task.resume()
+    }
 }

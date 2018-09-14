@@ -70,4 +70,17 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") {[weak self] (_, indexPath) in
+            guard let deleteUserId = self?.friends[indexPath.row].userId,
+                let strongSelf = self
+                else { return }
+            strongSelf.friends.remove(at: indexPath.row)
+            strongSelf.tableView.deleteRows(at: [indexPath], with: .automatic)
+            Service.deleteUser(userId: deleteUserId)
+        }
+        delete.backgroundColor = UIColor.red
+        return [delete]
+    }
 }

@@ -29,12 +29,41 @@ class DataWorker {
     static func loadUserData() -> Results<User>? {
         do {
             let realm = try Realm()
-            return realm.objects(User.self).filter("whose == %@", Service.getUserId())
+            return realm.objects(User.self)
         }
         catch  {
             print(error)
             assertionFailure()
             return nil
+        }
+    }
+    
+    static func loadUserData(userId: Int) -> User? {
+        do {
+            let realm = try Realm()
+            let user = realm.objects(User.self).filter("userId == %@", userId)
+            return Array(user).first
+        }
+        catch {
+            print(error)
+            assertionFailure()
+            return nil
+        }
+    }
+    
+    //MARK: - Delete data
+    static func deleteUserFromData(userId: Int) {
+        if let deleteUser = DataWorker.loadUserData(userId: userId) {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.delete(deleteUser)
+                }
+            }
+            catch {
+                print(error)
+                assertionFailure()
+            }
         }
     }
 }
