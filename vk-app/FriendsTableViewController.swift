@@ -64,6 +64,11 @@ class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friend", for: indexPath) as! FriendTableViewCell
         let user = friends[indexPath.row]
         cell.setName(text: user.name)
+        let getCacheImage = GetCacheImage(cacheLifeTime: GetCacheImage.avatarFriendsCacheLifeTime, url: user.avatarImage)
+        let setImageToRow = SetImageToRow(cell: cell, indexPath: indexPath, tableView: tableView)
+        setImageToRow.addDependency(getCacheImage)
+        SetImageToRow.queue.addOperation(getCacheImage)
+        OperationQueue.main.addOperation(setImageToRow)
         return cell
     }
     
