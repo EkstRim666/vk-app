@@ -35,12 +35,13 @@ class FriendsTableViewController: UITableViewController {
                 strongSelf.tableView.reloadData()
             
             case let .update(results, deletions, insetion, modifications):
-            strongSelf.friends = Array(results)
-            strongSelf.tableView.beginUpdates()
-            strongSelf.tableView.insertRows(at: insetion.map({IndexPath(row: $0, section: 0)}), with: .automatic)
-            strongSelf.tableView.deleteRows(at: deletions.map({IndexPath.init(row: $0, section: 0)}), with: .automatic)
-            strongSelf.tableView.reloadRows(at: modifications.map({IndexPath.init(row: $0, section: 0)}), with: .automatic)
-            strongSelf.tableView.endUpdates()
+                strongSelf.friends = Array(results)
+                strongSelf.tableView.reloadData()
+//                strongSelf.tableView.beginUpdates()
+//                strongSelf.tableView.insertRows(at: insetion.map({IndexPath(row: $0, section: 0)}), with: .automatic)
+//                strongSelf.tableView.deleteRows(at: deletions.map({IndexPath.init(row: $0, section: 0)}), with: .automatic)
+//                strongSelf.tableView.reloadRows(at: modifications.map({IndexPath.init(row: $0, section: 0)}), with: .automatic)
+//                strongSelf.tableView.endUpdates()
             
             case .error(let error):
             print(error)

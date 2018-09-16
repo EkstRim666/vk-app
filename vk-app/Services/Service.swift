@@ -212,8 +212,18 @@ class Service {
         ]
         
         let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
-            guard let data = data
+            guard let data = data,
+                let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
                 else { return }
+            if let responseDeleteFromApi = json as? [String: Any] {
+                if let responseJson = responseDeleteFromApi["response"] as? [String: Any] {
+                    if let success = responseJson["success"] as? Int {
+                        if success == 1 {
+                            DataWorker.deleteUserFromData(userId: userId)
+                        }
+                    }
+                }
+            }
         }
         
         task.resume()
