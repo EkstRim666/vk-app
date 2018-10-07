@@ -20,6 +20,7 @@
 		419EB767213445A40015BF14 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB766213445A40015BF14 /* FriendsTableViewController.swift */; };
 		419EB76A213448910015BF14 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB769213448910015BF14 /* GroupsTableViewController.swift */; };
 		419EB76C213449280015BF14 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419EB76B213449280015BF14 /* GroupTableViewCell.swift */; };
+		41AAE0CF216A30EA00DF69E1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AAE0CE216A30EA00DF69E1 /* Extension.swift */; };
 		41ED345F213CAF7F00A38490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED345E213CAF7F00A38490 /* User.swift */; };
 		41ED34882140A3EE00A38490 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED34872140A3EE00A38490 /* Group.swift */; };
 		41ED34C22142B61300A38490 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41ED34C12142B61300A38490 /* Groups.storyboard */; };
@@ -54,6 +55,7 @@
 		419EB766213445A40015BF14 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		419EB769213448910015BF14 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		419EB76B213449280015BF14 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		41AAE0CE216A30EA00DF69E1 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		41ED345E213CAF7F00A38490 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		41ED34872140A3EE00A38490 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		41ED34C12142B61300A38490 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				4125A67B214E5DBC0081781C /* CacheImage */,
 				419EB7432132ECBA0015BF14 /* Service.swift */,
 				4125A61F214870A80081781C /* DataWorker.swift */,
+				41AAE0CE216A30EA00DF69E1 /* Extension.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				419EB7442132ECBA0015BF14 /* Service.swift in Sources */,
 				419EB765213444EB0015BF14 /* FriendTableViewCell.swift in Sources */,
 				41ED34DF2144FD0700A38490 /* PhotoCollectionViewCell.swift in Sources */,
+				41AAE0CF216A30EA00DF69E1 /* Extension.swift in Sources */,
 				419EB767213445A40015BF14 /* FriendsTableViewController.swift in Sources */,
 				41ED34F32146A95E00A38490 /* News.swift in Sources */,
 				41ED34E82146962400A38490 /* NewsTableViewController.swift in Sources */,
