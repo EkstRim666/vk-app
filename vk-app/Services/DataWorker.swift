@@ -25,6 +25,18 @@ class DataWorker {
         }
     }
     
+    static func savePhotoData(_ photos: [Photo]) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(photos, update: true)
+            }
+        }
+        catch {
+            assertionFailure("\(error)")
+        }
+    }
+    
     //MARK: - Load data
     static func loadUserData() -> Results<User>? {
         do {

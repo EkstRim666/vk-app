@@ -130,6 +130,7 @@ class Service {
             do {
                 let decoder = JSONDecoder()
                 let responsePhotosFromApi = try decoder.decode(ResponsePhotosFromApi.self, from: data)
+                DataWorker.savePhotoData(responsePhotosFromApi.response.items)
             }
             catch let error {
                 print(error)
