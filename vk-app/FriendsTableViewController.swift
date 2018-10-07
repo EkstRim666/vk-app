@@ -13,6 +13,7 @@ class FriendsTableViewController: UITableViewController {
     
     private var friends: [User] = []
     private var tokenFriends: NotificationToken?
+    private var indexPath: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,18 @@ class FriendsTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showPhotos":
+            if let photosCVC = segue.destination as? PhotosCollectionViewController,
+                let indexPath = indexPath {
+                photosCVC.setPhotosOwnerId(ownerId: friends[indexPath.row].userId)
+            }
+        default:
+            return
+        }
+    }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,6 +91,12 @@ class FriendsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let userPhoto = UITableViewRowAction(style: .default, title: "Photos") {[weak self] (_, indexPath) in
+            self?.indexPath = indexPath
+            self?.performSegue(withIdentifier: "showPhotos", sender: nil)
+        }
+        userPhoto.backgroundColor = UIColor.blue
+        
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") {[weak self] (_, indexPath) in
             guard let deleteUserId = self?.friends[indexPath.row].userId,
                 let strongSelf = self
@@ -87,6 +106,6 @@ class FriendsTableViewController: UITableViewController {
             Service.deleteUser(userId: deleteUserId)
         }
         delete.backgroundColor = UIColor.red
-        return [delete]
+        return [userPhoto, delete]
     }
 }

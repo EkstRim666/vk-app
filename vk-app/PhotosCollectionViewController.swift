@@ -11,9 +11,16 @@ import UIKit
 private let reuseIdentifier = "Photo"
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
+    private var ownerId: Int = 0
+    private var photos: [Photo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func setPhotosOwnerId(ownerId: Int) {
+        self.ownerId = ownerId
     }
 
     // MARK: UICollectionViewDataSource
@@ -22,7 +29,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
