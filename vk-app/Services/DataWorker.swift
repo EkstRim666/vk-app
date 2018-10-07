@@ -63,6 +63,17 @@ class DataWorker {
         }
     }
     
+    static func loadPhotoData(ownerId: Int) -> Results<Photo>? {
+        do {
+            let realm = try Realm()
+            return realm.objects(Photo.self).filter("ownerId == %@", ownerId)
+        }
+        catch  {
+            assertionFailure("\(error)")
+            return nil
+        }
+    }
+    
     //MARK: - Delete data
     static func deleteUserFromData(userId: Int) {
         if let deleteUser = DataWorker.loadUserData(userId: userId) {
