@@ -170,6 +170,37 @@ class Service {
         task.resume()
     }
     
+    static func searchGroupName(_ searchName: String, comletion: @escaping ([Group]) -> Void) {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        var urlConstructor = URLComponents()
+        
+        urlConstructor.scheme = "https"
+        urlConstructor.host = "api.vk.com"
+        urlConstructor.path = "/method/groups.search"
+        urlConstructor.queryItems = [
+            URLQueryItem(name: "q", value: searchName),
+            URLQueryItem(name: "sort", value: "0"),
+            URLQueryItem(name: "count", value: "1000"),
+            URLQueryItem(name: "access_token", value: Service.token),
+            URLQueryItem(name: "v", value: Service.versionAPI),
+        ]
+        
+        let task = session.dataTask(with: urlConstructor.url!) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let responseGroupFromApi = try decoder.decode(ResponseGroupsFromApi.self, from: data)
+                comletion(responseGroupFromApi.response.items)
+            }
+            catch let error {
+                assertionFailure("\(error)")
+            }
+        }
+        
+        task.resume()
+    }
+    
     static func getNews() {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
