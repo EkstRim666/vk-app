@@ -11,6 +11,7 @@ import UIKit
 class GetCacheImage: Operation {
 
     static let avatarFriendsCacheLifeTime: TimeInterval = 86400
+    static let avatarGroupsCacheLifeTime: TimeInterval = 604800
     
     var outputImage: UIImage?
     

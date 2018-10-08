@@ -40,5 +40,12 @@ class SetImageToRow: Operation {
                 cell.avatar.image = image
             }
         }
+        if let cell = cell as? GroupTableViewCell {
+            if let newIndexPath = tableView.indexPath(for: cell), newIndexPath == indexPath {
+                cell.avatar.image = image
+            } else if tableView.indexPath(for: cell) == nil {
+                cell.avatar.image = image
+            }
+        }
     }
 }

@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupsTableViewController: UITableViewController {
+    
+    private var tokenGroup: NotificationToken?
+    private var groups: [Group] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +20,33 @@ class GroupsTableViewController: UITableViewController {
         tableView.rowHeight = 55
         
         Service.getGroups(userId: Service.getUserId())
+        pairTableGroupAndData(Service.getUserId())
+    }
+    
+    private func pairTableGroupAndData(_ ownerId: Int) {
+        guard let groups = DataWorker.loadGroupData(ownerId: ownerId)
+            else { return }
+        self.groups = Array(groups)
+        tokenGroup = groups.observe {[weak self] (changes) in
+            guard let `self` = self
+                else { return }
+            switch changes {
+            case .initial:
+                self.tableView.reloadData()
+                
+            case let .update(results, deletions, insetion, modifications):
+                self.groups = Array(results)
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: insetion.map({IndexPath(row: $0, section: 0)}), with: .automatic)
+                self.tableView.deleteRows(at: deletions.map({IndexPath.init(row: $0, section: 0)}), with: .automatic)
+                self.tableView.reloadRows(at: modifications.map({IndexPath.init(row: $0, section: 0)}), with: .automatic)
+                self.tableView.endUpdates()
+                
+            case .error(let error):
+                assertionFailure("\(error)")
+                
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -24,6 +55,18 @@ class GroupsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return groups.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! GroupTableViewCell
+        let group = groups[indexPath.row]
+        cell.setName(text: group.name)
+        let getCacheImage = GetCacheImage(cacheLifeTime: GetCacheImage.avatarGroupsCacheLifeTime, url: group.avatarImage)
+        let setImageToRow = SetImageToRow(cell: cell, indexPath: indexPath, tableView: tableView)
+        setImageToRow.addDependency(getCacheImage)
+        SetImageToRow.queue.addOperation(getCacheImage)
+        OperationQueue.main.addOperation(setImageToRow)
+        return cell
     }
 }
