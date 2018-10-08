@@ -89,6 +89,17 @@ class DataWorker {
         }
     }
     
+    static func loadGroupData(ownerId: Int) -> Results<Group>? {
+        do {
+            let realm = try Realm()
+            return realm.objects(Group.self).filter("ownerId == %@", ownerId)
+        }
+        catch  {
+            assertionFailure("\(error)")
+            return nil
+        }
+    }
+    
     //MARK: - Delete data
     static func deleteUserFromData(userId: Int) {
         if let deleteUser = DataWorker.loadUserData(userId: userId) {
