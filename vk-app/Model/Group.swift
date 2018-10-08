@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct ResponseGroupsFromApi: Codable {
     var response: ResponseGroups
@@ -17,13 +18,14 @@ struct ResponseGroups: Codable {
     var items: [Group]
 }
 
-class Group: Codable {
-    var groupId: Int
-    var name: String
-    var screenName: String
-    var isMember: Int
-    var avatarImage: URL
-    var bigAvatarImage: URL
+class Group: Object, Codable {
+    @objc dynamic var groupId: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var screenName: String = ""
+    @objc dynamic var isMember: Int = -1
+    @objc dynamic var avatarImage: String = ""
+    @objc dynamic var bigAvatarImage: String = ""
+    @objc dynamic var ownerId: Int = 0
     
     enum GroupCodingKeys: String, CodingKey {
         case groupId = "id"
@@ -34,13 +36,18 @@ class Group: Codable {
         case bigAvatarImage = "photo_200"
     }
     
-    required init(from decoder: Decoder) throws {
+    convenience required init(from decoder: Decoder) throws {
+        self.init()
         let container = try decoder.container(keyedBy: GroupCodingKeys.self)
         self.groupId = try container.decode(Int.self, forKey: .groupId)
         self.name = try container.decode(String.self, forKey: .name)
         self.screenName = try container.decode(String.self, forKey: .screenName)
         self.isMember = try container.decode(Int.self, forKey: .isMember)
-        self.avatarImage = try container.decode(URL.self, forKey: .avatarImage)
-        self.bigAvatarImage = try container.decode(URL.self, forKey: .bigAvatarImage)
+        self.avatarImage = try container.decode(String.self, forKey: .avatarImage)
+        self.bigAvatarImage = try container.decode(String.self, forKey: .bigAvatarImage)
+    }
+    
+    override static func primaryKey() -> String? {
+        return "groupId"
     }
 }

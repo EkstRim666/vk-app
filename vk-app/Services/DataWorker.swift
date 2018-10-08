@@ -37,6 +37,21 @@ class DataWorker {
         }
     }
     
+    static func saveGroupData(_ groups:[Group], withOwnerId ownerId: Int) {
+        groups.forEach {
+            $0.ownerId = ownerId
+        }
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(groups, update: true)
+            }
+        }
+        catch {
+            assertionFailure("\(error)")
+        }
+    }
+    
     //MARK: - Load data
     static func loadUserData() -> Results<User>? {
         do {

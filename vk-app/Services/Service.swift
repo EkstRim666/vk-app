@@ -160,6 +160,7 @@ class Service {
             do {
                 let decoder = JSONDecoder()
                 let responseGroupFromApi = try decoder.decode(ResponseGroupsFromApi.self, from: data)
+                DataWorker.saveGroupData(responseGroupFromApi.response.items, withOwnerId: userId)
             }
             catch let error {
                 print(error)
