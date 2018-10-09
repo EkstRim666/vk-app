@@ -201,7 +201,7 @@ class Service {
         task.resume()
     }
     
-    static func getNews() {
+    static func getNews(comletion: @escaping ([News]) -> Void) {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         var urlConstructor = URLComponents()
@@ -221,9 +221,10 @@ class Service {
             do {
                 let decoder = JSONDecoder()
                 let responseNewsFromApi = try decoder.decode(ResponseNewsFromApi.self, from: data)
+                comletion(responseNewsFromApi.response.items)
             }
             catch let error {
-                print(error)
+                assertionFailure("\(error)")
             }
         }
         

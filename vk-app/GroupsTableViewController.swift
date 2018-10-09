@@ -65,7 +65,7 @@ class GroupsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! GroupTableViewCell
-        if searchGroup.isEmpty {
+        if searchGroup.isEmpty || searchBar.text == "" {
             let group = groups[indexPath.row]
             cell.setName(text: group.name)
             let getCacheImage = GetCacheImage(cacheLifeTime: GetCacheImage.avatarGroupsCacheLifeTime, url: group.avatarImage)
