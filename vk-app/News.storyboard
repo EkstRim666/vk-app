@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SgO-m2-P90">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SgO-m2-P90">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="news" rowHeight="139" id="HDC-EP-U4P" customClass="NewsTableViewCell" customModule="vk_app" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="139"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="news" rowHeight="155" id="HDC-EP-U4P" customClass="NewsTableViewCell" customModule="vk_app" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HDC-EP-U4P" id="0OX-vA-QEs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="138.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FTI-ka-CsF">
@@ -47,28 +46,28 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👁‍🗨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1A-q6-atX">
-                                            <rect key="frame" x="115" y="75" width="23" height="21"/>
+                                            <rect key="frame" x="115" y="76" width="23" height="21"/>
                                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmk-kP-NAb">
-                                            <rect key="frame" x="49" y="75" width="23" height="21"/>
+                                            <rect key="frame" x="49" y="76" width="23" height="21"/>
                                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weX-TB-eS2">
-                                            <rect key="frame" x="82" y="75" width="23" height="21"/>
+                                            <rect key="frame" x="82" y="76" width="23" height="21"/>
                                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cZ-Dw-CGz">
-                                            <rect key="frame" x="16" y="106" width="343" height="20.333333333333329"/>
+                                            <rect key="frame" x="16" y="107" width="343" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -90,6 +89,7 @@
                                         <constraint firstItem="h1A-q6-atX" firstAttribute="leading" secondItem="weX-TB-eS2" secondAttribute="trailing" constant="10" id="tUm-V0-xfq"/>
                                         <constraint firstItem="h1A-q6-atX" firstAttribute="centerY" secondItem="TjA-j5-hzI" secondAttribute="centerY" id="xXs-4Y-aHs"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="PFd-ke-wxa" secondAttribute="trailing" id="ymw-NN-huj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7cZ-Dw-CGz" secondAttribute="bottom" constant="10" id="yp9-6F-LQc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="7cZ-Dw-CGz" secondAttribute="trailing" id="zaL-1Q-a4h"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -113,7 +113,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYz-gg-Vdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-261.60000000000002" y="199.25037481259372"/>
+            <point key="canvasLocation" x="-261.60000000000002" y="198.76847290640396"/>
         </scene>
         <!--News-->
         <scene sceneID="9WO-7J-ObB">
@@ -122,7 +122,6 @@
                     <tabBarItem key="tabBarItem" title="News" id="rR6-Gn-7jb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n8Z-eU-I6e">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

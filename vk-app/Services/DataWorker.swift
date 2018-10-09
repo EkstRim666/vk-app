@@ -100,6 +100,14 @@ class DataWorker {
         }
     }
     
+    static func loadGroupData(groupId: Int) -> Group? {
+        Service.getGroups(userId: Service.getUserId())
+        guard let groups = DataWorker.loadGroupData(ownerId: Service.getUserId())
+            else { return nil }
+        let group = groups.filter("groupId == %@", groupId)
+        return Array(group).first
+    }
+    
     //MARK: - Delete data
     static func deleteUserFromData(userId: Int) {
         if let deleteUser = DataWorker.loadUserData(userId: userId) {
