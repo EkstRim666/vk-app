@@ -202,6 +202,9 @@ class Service {
     }
     
     static func getNews(comletion: @escaping ([News]) -> Void) {
+        if DataWorker.loadGroupData(ownerId: Service.getUserId())?.count == 0 {
+            Service.getGroups(userId: Service.getUserId())
+        }
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         var urlConstructor = URLComponents()
