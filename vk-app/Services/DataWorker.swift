@@ -20,8 +20,7 @@ class DataWorker {
             }
         }
         catch {
-            print(error)
-            assertionFailure()
+            assertionFailure("\(error)")
         }
     }
     
@@ -59,8 +58,7 @@ class DataWorker {
             return realm.objects(User.self)
         }
         catch  {
-            print(error)
-            assertionFailure()
+            assertionFailure("\(error)")
             return nil
         }
     }
@@ -72,8 +70,7 @@ class DataWorker {
             return Array(user).first
         }
         catch {
-            print(error)
-            assertionFailure()
+            assertionFailure("\(error)")
             return nil
         }
     }
@@ -101,10 +98,15 @@ class DataWorker {
     }
     
     static func loadGroupData(groupId: Int) -> Group? {
-        guard let groups = DataWorker.loadGroupData(ownerId: Service.getUserId())
-            else { return nil }
-        let group = groups.filter("groupId == %@", groupId)
-        return Array(group).first
+        do {
+            let realm = try Realm()
+            let group =  realm.objects(Group.self).filter("groupId == %@", groupId)
+            return Array(group).first
+        }
+        catch  {
+            assertionFailure("\(error)")
+            return nil
+        }
     }
     
     //MARK: - Delete data
@@ -117,8 +119,7 @@ class DataWorker {
                 }
             }
             catch {
-                print(error)
-                assertionFailure()
+                assertionFailure("\(error)")
             }
         }
     }
