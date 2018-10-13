@@ -41,7 +41,7 @@ class MessageTableViewCell: UITableViewCell {
         let messageLabelSize = getLableSize(text: text, font: messageText.font)
         guard let message = message
             else { return }
-        if message.fromId == Service.getUserId() {
+        if message.fromId == message.ownerId {
             let messageLabelX = bounds.minX + instetsShowWhoseMessage
             let messageLabelY = bounds.midY - messageLabelSize.height / 2
             let messageLabelOrigin = CGPoint(x: messageLabelX, y: messageLabelY)

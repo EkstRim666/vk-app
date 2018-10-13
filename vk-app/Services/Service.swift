@@ -103,6 +103,7 @@ class Service {
                 do {
                     let decoder = JSONDecoder()
                     let responseMessagesFromApi = try decoder.decode(ResponseMessagesFromApi.self, from: data)
+                    DataWorker.saveMessageData(responseMessagesFromApi.response.items, withOwnerId: userId)
                 }
                 catch let error {
                     assertionFailure("\(error)")

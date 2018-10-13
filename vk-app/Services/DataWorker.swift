@@ -51,6 +51,21 @@ class DataWorker {
         }
     }
     
+    static func saveMessageData(_ messages:[Message], withOwnerId ownerId: Int) {
+        messages.forEach {
+            $0.ownerId = ownerId
+        }
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(messages, update: true)
+            }
+        }
+        catch {
+            assertionFailure("\(error)")
+        }
+    }
+    
     //MARK: - Load data
     static func loadUserData() -> Results<User>? {
         do {

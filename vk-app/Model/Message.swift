@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct ResponseMessagesFromApi: Codable {
     var response: ResponseMessages
@@ -17,10 +18,11 @@ struct ResponseMessages: Codable {
     var items: [Message]
 }
 
-class Message: Codable {
-    var text: String = ""
-    var fromId: Int
-    var messageId: Int
+class Message: Object, Codable {
+    @objc dynamic var text: String = ""
+    @objc dynamic var fromId: Int = 0
+    @objc dynamic var messageId: Int = 0
+    @objc dynamic var ownerId: Int = 0
     
     enum MessageCodingKeys: String, CodingKey {
         case fromId = "from_id"
@@ -28,7 +30,8 @@ class Message: Codable {
         case messageId = "id"
     }
     
-    required init(from decoder: Decoder) throws {
+    convenience required init(from decoder: Decoder) throws {
+        self.init()
         let container = try decoder.container(keyedBy: MessageCodingKeys.self)
         self.fromId = try container.decode(Int.self, forKey: .fromId)
         self.messageId = try container.decode(Int.self, forKey: .messageId)
