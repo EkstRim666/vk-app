@@ -124,6 +124,17 @@ class DataWorker {
         }
     }
     
+    static func loadMessagesData(ownerId: Int) -> Results<Message>? {
+        do {
+            let realm = try Realm()
+            return realm.objects(Message.self).filter("ownerId == %@", ownerId)
+        }
+        catch  {
+            assertionFailure("\(error)")
+            return nil
+        }
+    }
+    
     //MARK: - Delete data
     static func deleteUserFromData(userId: Int) {
         if let deleteUser = DataWorker.loadUserData(userId: userId) {

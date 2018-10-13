@@ -42,7 +42,7 @@
                                 <connections>
                                     <outlet property="avatar" destination="uDr-yr-lZx" id="YFy-XU-IS6"/>
                                     <outlet property="name" destination="2kL-Nt-BaZ" id="gje-Bl-da5"/>
-                                    <segue destination="bjy-5C-Afg" kind="show" id="Psj-t0-Vr7"/>
+                                    <segue destination="bjy-5C-Afg" kind="show" identifier="showMessages" id="Psj-t0-Vr7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

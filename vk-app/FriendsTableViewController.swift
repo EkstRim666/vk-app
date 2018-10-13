@@ -55,10 +55,15 @@ class FriendsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "showPhotos":
-            if let photosCVC = segue.destination as? PhotosCollectionViewController,
-                let indexPath = indexPath {
-                photosCVC.setPhotosOwnerId(ownerId: friends[indexPath.row].userId)
-            }
+            guard let photosCVC = segue.destination as? PhotosCollectionViewController,
+                let indexPath = indexPath
+                else { return }
+            photosCVC.setPhotosOwnerId(ownerId: friends[indexPath.row].userId)
+        case "showMessages":
+            guard let messagesVC = segue.destination as? MessagesViewController,
+                let indexPath = tableView.indexPathForSelectedRow
+                else { return }
+            messagesVC.setUserFromMessagesVC(user: friends[indexPath.row])
         default:
             return
         }

@@ -25,10 +25,10 @@ class MessageTableViewCell: UITableViewCell {
         return MessageTableViewCell.height
     }
     
-//    static func setMessage(message: Message) {
-//        self.message = message
-//        setMessageText()
-//    }
+    func setMessage(message: Message) {
+        self.message = message
+        setMessageText()
+    }
     
     private func setMessageText() {
         messageText.text = message?.text
@@ -41,7 +41,7 @@ class MessageTableViewCell: UITableViewCell {
         let messageLabelSize = getLableSize(text: text, font: messageText.font)
         guard let message = message
             else { return }
-        if message.fromId == message.ownerId {
+        if message.fromId != message.ownerId {
             let messageLabelX = bounds.minX + instetsShowWhoseMessage
             let messageLabelY = bounds.midY - messageLabelSize.height / 2
             let messageLabelOrigin = CGPoint(x: messageLabelX, y: messageLabelY)
@@ -65,5 +65,13 @@ class MessageTableViewCell: UITableViewCell {
         return size
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        messageLabelFrame()
+    }
     
+    override func prepareForReuse() {
+        messageText.text = nil
+    }
 }

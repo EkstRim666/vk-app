@@ -37,4 +37,8 @@ class Message: Object, Codable {
         self.messageId = try container.decode(Int.self, forKey: .messageId)
         self.text = try container.decode(String.self, forKey: .text)
     }
+    
+    override static func primaryKey() -> String? {
+        return "messageId"
+    }
 }
